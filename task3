@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <Div>
+        <h1> Hello World</h1>
+    </Div>
+    <script type="text/javascript">
+ 
+ function sumSliceArray(arr, first, second) {
+    // Перевірка чи arr є масивом
+    if (!Array.isArray(arr)) {
+        throw new Error("Перший параметр повинен бути масивом.");
+    }
+
+    // Перевірка чи first і second є числами
+    if (typeof first !== 'number' || typeof second !== 'number') {
+        throw new Error("Другий та третій параметри повинні бути числами.");
+    }
+
+    // Перевірка чи обидва параметри менше або рівні довжині масиву
+    if (first >= arr.length || second >= arr.length) {
+        throw new Error("Другий та третій параметри перевищують розмір масиву.");
+    }
+
+    // Виклик функції sumSliceArray без обробки винятків
+    return arr[first] + arr[second];
+}
+
+// Приклад використання з перевіркою параметрів перед викликом
+var array = [1, 2, 3, 4, 5];
+var firstIndex = 2;
+var secondIndex = 4;
+
+if (Array.isArray(array) && typeof firstIndex === 'number' && typeof secondIndex === 'number' &&
+    firstIndex < array.length && secondIndex < array.length) {
+    var result = sumSliceArray(array, firstIndex, secondIndex);
+    console.log("Результат сумування:", result);
+} else {
+    console.error("Помилка: Неправильні параметри для виклику функції.");
+}
+
+
+
+        </script>
+</body>
+</html>
