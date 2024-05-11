@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <Div>
+        <h1> Hello World</h1>
+    </Div>
+    <script type="text/javascript">
+ 
+ function sumSliceArray(arr, first, second) {
+    // Перевірка чи обидва параметри є числами
+    if (typeof first !== 'number' || typeof second !== 'number') {
+        throw new Error("Порядкові номери елементів повинні бути числами.");
+    }
+    
+    // Перевірка чи обидва параметри менше або рівні довжині масиву
+    if (first >= arr.length || second >= arr.length) {
+        throw new Error("Порядкові номери елементів перевищують розмір масиву.");
+    }
+
+    return arr[first] + arr[second];
+}
+
+// Приклад використання функції з обробкою винятків
+var array = [1, 2, 3, 4, 5];
+
+try {
+    var result = sumSliceArray(array, 2, 4);
+    console.log("Результат сумування:", result);
+} catch (error) {
+    console.log("Помилка:", error.message);
+}
+
+
+        </script>
+</body>
+</html>
