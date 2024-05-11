@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <Div>
+        <h1> Hello World</h1>
+    </Div>
+    <script type="text/javascript">
+ 
+ function random(min, max, delay, callback) {
+    setTimeout(function() {
+        if (min < max) {
+            var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            callback(null, randomNumber);
+        } else {
+            var error = new Error("min більше за max");
+            callback(error);
+        }
+    }, delay);
+}
+
+random(1, 100, 2000, function(error, data) {
+    if (error) {
+        console.error("Помилка:", error.message);
+    } else {
+        console.log("Випадкове число:", data);
+    }
+});
+
+random(1000, 100, 3000, function(error, data) {
+    if (error) {
+        console.error("Помилка:", error.message);
+    } else {
+        console.log("Випадкове число:", data);
+    }
+});
+
+
+        </script>
+</body>
+</html>
